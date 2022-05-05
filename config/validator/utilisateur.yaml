@@ -1,0 +1,38 @@
+App\Entity\Utilisateur:
+    properties:
+        email:
+            - NotBlank:
+                  message: 'Veuillez saisir une adresse email.'
+            - Email:
+                  message: 'Veuillez saisir une adresse email valide.'
+
+        plainMotDePasse:
+            - NotBlank:
+                  message: 'Veuillez saisir un mot de passe'
+                  groups: [registration]
+            - Length:
+                  min: 8
+                  max: 100
+                  minMessage: 'le mot de passe doit contenir au moins {{ limit }} caractères'
+                  maxMessage: 'le mot de passe doit contenir au maximum {{ limit }} caractères'
+                  groups: [registration]
+
+        prenom:
+            - Type: string
+
+        nom:
+            - Type: string
+
+        genre:
+            - Type: string
+
+        dateDeNaissance:
+            - Type: \DateTimeImmutable
+
+        dateDeCreation:
+            - Type: \DateTimeImmutable
+
+        dateDebutFreelancing:
+            - NotBlank:
+                  message: 'Le champs date est vide'
+            - Type: \DateTimeImmutable

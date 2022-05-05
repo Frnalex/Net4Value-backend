@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Bienvenue sur net4Value</h1>
+
+		<p>
+			Veuillez confirmer votre email en cliquant sur le lien ci-dessous:
+			<br><br>
+			<a href="{{ absolute_url(path('utilisateur_email_verification', {code: token.code})) }}">Confirmer mon email</a>
+		</p>
+	</body>
+</html>
